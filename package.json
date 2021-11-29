@@ -1,5 +1,5 @@
 {
-    "name": "nosql_practica2",
+    "name": "nosql_practica4_bdfi",
     "version": "0.0.0",
     "description": "autoCOREctor de la asignatura de BBDD (UPM)",
     "main": "dist/index.js",
@@ -10,13 +10,13 @@
         "CORE",
         "self-assessment"
     ],
-    "author": "ging",
+    "author": "anmunoz",
     "license": "GNU",
     "info": {
-        "githubURL": "ebarra/nosql_practica2_bdfi",
+        "githubURL": "BBDD-ETSIT/nosql_practica4_bdfi",
         "serverUrl": "https://autocorector.dit.upm.es/",
         "courseId": "899",
-        "assignmentId": "7761"
+        "assignmentId": "7763"
     },
     "repository": {
         "type": "git",
