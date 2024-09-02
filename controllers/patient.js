@@ -2,37 +2,49 @@
 const Patient = require('../models/patient');
 
 exports.list = async function() {
-    // Rellene aqui ...
+    let result= await Patient.find();
+    return result;
 }
 
 exports.read = async function(patientId) {
-    // Rellene aqui ...
+    let result= await Patient.findById(patientId);
+    return result;
 }
 
 exports.create = async function(body) {
-    // Rellene aqui ...
+    let patient = new Patient(body);
+    let result= await patient.save();
+    return result;
 }
 
 exports.update= async function(patientId, body) {
-    // Rellene aqui ...
+    let result= await Patient.findOneAndUpdate({_id: patientId}, body, { new: true });
+    return result;
 }
 
 exports.delete = async function(patientId) {
-    // Rellene aqui ...
+    let result = await Patient.deleteOne({_id: patientId});
+    return result;
 }
 
 exports.filterPatientsByCity = async function (city) {
-    // Rellene aqui ...
+    let result = await Patient.find({city: city});
+    return result;
 }
 
 exports.filterPatientsByDiagnosis = async function (diagnosis) {
-    // Rellene aqui ...
+    let result = await Patient.find({'medicalHistory.diagnosis': diagnosis});
+    return result;
 }
 
 exports.filterPatientsBySpeacialistAndDate = async function (specialist, sDate,fDate) {
-    // Rellene aqui ...
+    let result = await Patient.find({medicalHistory: {$elemMatch: {specialist: specialist,
+                date:{"$gte": sDate, "$lt": fDate}}}});
+    return result;
 }
 
 exports.addPatientHistory = async function (patientId, medicalRecord) {
-    // Rellene aqui ...
+    let result = await Patient.findOneAndUpdate({ _id: patientId },
+        { $push: { medicalHistory: medicalRecord } }, { new: true});
+    return result;
 }

@@ -16,7 +16,7 @@
         "githubURL": "BBDD-ETSIT/nosql_practica4_bdfi",
         "serverUrl": "https://aat.dit.upm.es/",
         "courseId": "899",
-        "assignmentId": "12483"
+        "assignmentId": "8497"
     },
     "dependencies": {
         "mongoose": "^6.7.1",
